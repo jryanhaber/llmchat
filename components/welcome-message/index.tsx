@@ -44,10 +44,10 @@ const welcomePoints: WelcomePoint[] = [
     icon: Lock,
     text: <PrivacyCopy />,
   },
-  // {
-  //   icon: Rocket,
-  //   text: <OpenSourceCopy />,
-  // },
+  {
+    icon: Rocket,
+    text: <OpenSourceCopy />,
+  },
 ];
 
 export const WelcomeMessage = ({ show }: TWelcomeMessageProps) => {

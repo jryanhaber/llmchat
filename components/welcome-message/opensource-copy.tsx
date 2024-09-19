@@ -9,7 +9,7 @@ export const OpenSourceCopy = () => {
   return (
     <>
       We&apos;re shipping new features every week. Check out{" "}
-      <a href="https://llmchat.supahub.com" className={linkClass}>
+      <a href="https://www.ixcoach.com/feedback?type=feature%20request" className={linkClass}>
         what&apos;s coming
       </a>{" "}
       or{" "}
