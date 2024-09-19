@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Chat with top LLMs in a minimal, privacy-focused UI.",
   openGraph: {
     title: "IXConnect - Your Ultimate AI Chat Experience",
-    siteName: "ixcoach.com",
+    siteName: "connect.ixcoach.com",
     description: "Chat with top LLMs in a minimal, privacy-focused UI.",
     url: "https://connect.ixcoach.com",
   },
@@ -48,7 +48,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           defer
-          data-domain="llmchat.co"
+          data-domain="connect.ixcoach.com"
           src="https://plausible.io/js/script.tagged-events.js"
         ></script>
       </head>
