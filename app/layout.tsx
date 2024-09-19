@@ -14,17 +14,17 @@ import { interVar } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Connect IX AI - Your Ultimate AI Chat Experience",
+  title: "IXConnect - Your Ultimate AI Chat Experience",
   description: "Chat with top LLMs in a minimal, privacy-focused UI.",
   openGraph: {
-    title: "Connect IX AI - Your Ultimate AI Chat Experience",
+    title: "IXConnect - Your Ultimate AI Chat Experience",
     siteName: "ixcoach.com",
     description: "Chat with top LLMs in a minimal, privacy-focused UI.",
     url: "https://connect.ixcoach.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Connect IX AI - Your Ultimate AI Chat Experience",
+    title: "IXConnect - Your Ultimate AI Chat Experience",
     site: "connect.ixcoach.com",
     description: "Chat with top LLMs in a minimal, privacy-focused UI.",
   },

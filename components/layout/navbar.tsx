@@ -42,7 +42,7 @@ export const Navbar = () => {
         className="cursor-pointer"
       >
         {/* <ModelIcon type="llmchatlogo" size="xs" rounded={false} /> */}
-         IX
+         IXConnect
         <BetaTag />
       </Flex>
 
