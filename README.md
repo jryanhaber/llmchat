@@ -1,7 +1,6 @@
-
 ![og_6x](https://github.com/user-attachments/assets/4813a6b5-3294-4056-88bb-c536a45c220c)
 
-<h1 align="center">LLMChat</h1>
+<h1 align="center">Next AI Labs</h1>
 <p align="center">Most intuitive All-in-one AI chat interface.</p>
 
 [demo.webm](https://github.com/user-attachments/assets/d88afd50-ce19-4ca4-a1e3-44aa491178a1)
@@ -40,8 +39,8 @@
 - 📚 **Knowledge Spaces**: Coming soon.
 
 ## Quick Deploy with Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftrendy-design%2Fllmchat&env=JINA_API_KEY&envDescription=JINA_API_KEY&envLink=https%3A%2F%2Fjina.ai%2Freader&project-name=llmchat-clone)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftrendy-design%2Fllmchat&env=JINA_API_KEY&envDescription=JINA_API_KEY&envLink=https%3A%2F%2Fjina.ai%2Freader&project-name=llmchat-clone)
 
 ## Quick Start
 
@@ -54,12 +53,14 @@ To get the project running locally:
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-repo/llmchat.git
    cd llmchat
    ```
 
 2. Install dependencies:
+
    ```bash
    yarn install
    # or
@@ -67,6 +68,7 @@ To get the project running locally:
    ```
 
 3. Start the development server:
+
    ```bash
    yarn dev
    # or
@@ -78,4 +80,3 @@ To get the project running locally:
 ## Deployment
 
 Instructions for deploying the project will be added soon.
-
