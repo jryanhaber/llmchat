@@ -65,8 +65,6 @@ We reserve the right to modify these Terms at any time. If we make material chan
 If you have any questions about these Terms, please contact us at:
 
 connect.ixcoach.com
-Deepmal Lakhani
-Montreal, Canada
 [Your Email Address]
 [Your Phone Number]
 `;
