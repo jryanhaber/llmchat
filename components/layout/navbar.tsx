@@ -41,7 +41,8 @@ export const Navbar = () => {
         onClick={() => push("/")}
         className="cursor-pointer"
       >
-        <ModelIcon type="llmchatlogo" size="xs" rounded={false} />
+        {/* <ModelIcon type="llmchatlogo" size="xs" rounded={false} /> */}
+         IX
         <BetaTag />
       </Flex>
 
@@ -60,7 +61,7 @@ export const Navbar = () => {
           tooltip="Github"
           icon={Github}
           onClick={() => {
-            window.open("https://git.new/llmchat", "_blank");
+            window.open("https://git.new/", "_blank");
           }}
         />
         <HistorySidebar />

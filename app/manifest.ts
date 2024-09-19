@@ -2,10 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "LLMChat",
-    short_name: "LLMChat",
+    name: "ConnectIXAI",
+    short_name: "ConnectIXAI",
     description:
-      "LLMChat is a modern AI chat client that allows you to chat with AI in a more intuitive way.",
+      "ConnectIXAI is a modern AI chat client that allows you to chat with AI in a more intuitive way.",
     start_url: "/",
     display: "standalone",
     background_color: "#fff",

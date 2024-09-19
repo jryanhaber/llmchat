@@ -76,7 +76,7 @@ export const ProfileDropdown: FC<ProfileDropdownProps> = ({ className }) => {
     {
       label: "Support",
       onClick: () => {
-        window.open("mailto:support@llmchat.co", "_blank");
+        window.open("mailto:founder@ixcoach.com", "_blank");
       },
       icon: CircleHelp,
     },
@@ -94,7 +94,7 @@ export const ProfileDropdown: FC<ProfileDropdownProps> = ({ className }) => {
               )}
             >
               <Avatar
-                name={user?.email || "LLMChat"}
+                name={user?.email || "IX"}
                 variant="marble"
                 size={24}
                 colors={constants.avatarColors}
@@ -111,7 +111,7 @@ export const ProfileDropdown: FC<ProfileDropdownProps> = ({ className }) => {
           {user ? (
             <Flex className="items-center p-2" gap="md">
               <Avatar
-                name={user?.email || "LLMChat"}
+                name={user?.email || "IXChat"}
                 variant="beam"
                 size={24}
                 colors={["#4A2BE2", "#D5EC77", "#3EE2DE", "#AF71FF", "#F882B3"]}
@@ -150,14 +150,14 @@ export const ProfileDropdown: FC<ProfileDropdownProps> = ({ className }) => {
           <ProfileDropdownItem
             label="Twitter"
             onClick={() => {
-              window.open("https://x.com/llmchat_co", "_blank");
+              window.open("https://x.com/", "_blank");
             }}
             icon={Twitter}
           />
           <ProfileDropdownItem
             label="Github"
             onClick={() => {
-              window.open("https://git.new/llmchat", "_blank");
+              window.open("https://git.new/", "_blank");
             }}
             icon={Github}
           />

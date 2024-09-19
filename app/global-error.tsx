@@ -21,7 +21,7 @@ export default function GlobalError({ error }: { error: Error }) {
             <Type size="sm" textColor="secondary">
               It seems we encountered an unexpected error. Please try refreshing
               the page or check back later. If the problem persists, feel free
-              to <a href="mailto:hello@llmchat.com">contact team</a>.
+              to <a href="mailto:founder@ixcoach.com">contact team</a>.
             </Type>
           </div>
         </div>

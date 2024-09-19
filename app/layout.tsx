@@ -14,18 +14,18 @@ import { interVar } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "LLMChat - Your Ultimate AI Chat Experience",
+  title: "Connect IX AI - Your Ultimate AI Chat Experience",
   description: "Chat with top LLMs in a minimal, privacy-focused UI.",
   openGraph: {
-    title: "LLMChat - Your Ultimate AI Chat Experience",
-    siteName: "llmchat.co",
+    title: "Connect IX AI - Your Ultimate AI Chat Experience",
+    siteName: "ixcoach.com",
     description: "Chat with top LLMs in a minimal, privacy-focused UI.",
-    url: "https://llmchat.co",
+    url: "https://connect.ixcoach.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LLMChat - Your Ultimate AI Chat Experience",
-    site: "llmchat.co",
+    title: "Connect IX AI - Your Ultimate AI Chat Experience",
+    site: "connect.ixcoach.com",
     description: "Chat with top LLMs in a minimal, privacy-focused UI.",
   },
 };

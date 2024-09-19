@@ -4,7 +4,7 @@ export const termsMdx = `
 
 Last Updated: August 10, 2024
 
-Welcome to llmchat.co! These Terms and Conditions ("Terms") govern your use of the llmchat.co website and services (the "Service"). By accessing or using our Service, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not use the Service.
+Welcome to connect.ixcoach.com! These Terms and Conditions ("Terms") govern your use of the connect.ixcoach.com website and services (the "Service"). By accessing or using our Service, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not use the Service.
 
 ### 1. Acceptance of Terms
 
@@ -12,13 +12,13 @@ By using the Service, you agree to comply with and be legally bound by these Ter
 
 ### 2. Definitions
 
-- "Service" refers to the llmchat.co platform, including all related software, applications, and services provided by llmchat.co.
+- "Service" refers to the connect.ixcoach.com platform, including all related software, applications, and services provided by connect.ixcoach.com.
 - "User" refers to any individual or entity that accesses or uses the Service.
 - "Content" refers to any text, images, code, or other data uploaded, posted, or otherwise made available through the Service.
 
 ### 3. Privacy and Data Storage
 
-At llmchat.co, we prioritize your privacy. We do not store your chat history on our servers. All chat history is stored locally on your device, and we do not have access to your personal conversations. By using the Service, you agree to this local storage and understand that you are responsible for securing your own data.
+At connect.ixcoach.com, we prioritize your privacy. We do not store your chat history on our servers. All chat history is stored locally on your device, and we do not have access to your personal conversations. By using the Service, you agree to this local storage and understand that you are responsible for securing your own data.
 
 ### 4. User Authorization and Login
 
@@ -42,7 +42,7 @@ The Service is provided "as is" and "as available" without any warranties of any
 
 ### 8. Limitation of Liability
 
-In no event shall llmchat.co, its affiliates, or its licensors be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:
+In no event shall connect.ixcoach.com, its affiliates, or its licensors be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:
 
 - Your use or inability to use the Service.
 - Any unauthorized access to or use of our servers.
@@ -50,7 +50,7 @@ In no event shall llmchat.co, its affiliates, or its licensors be liable for any
 
 ### 9. Indemnification
 
-You agree to indemnify, defend, and hold harmless llmchat.co, its affiliates, and its licensors from and against any and all claims, damages, losses, liabilities, costs, and expenses arising from or related to your use of the Service or any violation of these Terms.
+You agree to indemnify, defend, and hold harmless connect.ixcoach.com, its affiliates, and its licensors from and against any and all claims, damages, losses, liabilities, costs, and expenses arising from or related to your use of the Service or any violation of these Terms.
 
 ### 10. Governing Law
 
@@ -64,7 +64,7 @@ We reserve the right to modify these Terms at any time. If we make material chan
 
 If you have any questions about these Terms, please contact us at:
 
-llmchat.co
+connect.ixcoach.com
 Deepmal Lakhani
 Montreal, Canada
 [Your Email Address]
