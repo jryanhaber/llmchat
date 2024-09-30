@@ -5,6 +5,7 @@ import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatGroq } from "@langchain/groq";
 import { ChatOllama } from "@langchain/ollama";
 import { ChatOpenAI } from "@langchain/openai";
+
 type ChatOpenAIConstructorParams = ConstructorParameters<typeof ChatOpenAI>[0];
 type ChatAnthropicConstructorParams = ConstructorParameters<
   typeof ChatAnthropic
@@ -19,6 +20,7 @@ type TCreateInstance = {
   model: Omit<TModelItem, "provider">;
   preferences?: Partial<TPreferences>;
   apiKey?: string;
+  isLoggedIn?: boolean;
   provider: TProvider;
 } & (
   | {
@@ -44,6 +46,10 @@ type TCreateInstance = {
   | {
       provider: "groq";
       props?: Partial<ChatGroqConstructorParams>;
+    } |
+     {
+      provider: "ixcoach";
+      props?: Partial<ChatGroqConstructorParams>;
     }
 );
 
@@ -53,6 +59,7 @@ export class ModelService {
     provider,
     preferences,
     apiKey,
+    isLoggedIn,
     ...props
   }: TCreateInstance) {
     const { temperature, topP, topK, ollamaBaseUrl, ...rest } = {
@@ -64,8 +71,9 @@ export class ModelService {
       rest.maxTokens <= model.maxOutputTokens
         ? rest.maxTokens
         : model.maxOutputTokens;
-
+const apiKeyValue = isLoggedIn ? "ixcoach" : apiKey;
     switch (provider) {
+      
       case "llmchat":
         return new ChatOpenAI({
           model: model.key,
@@ -84,7 +92,13 @@ export class ModelService {
         return new ChatOpenAI({
           model: model.key,
           streaming: true,
-          apiKey,
+          apiKey:apiKeyValue,
+          
+           ...(isLoggedIn && {
+          configuration: {
+            baseURL: `${window.location.origin}/api/ixcoach/`,
+          },
+          }),
           temperature,
           maxTokens,
           topP,
@@ -101,6 +115,11 @@ export class ModelService {
               "anthropic-dangerous-direct-browser-access": "true",
             },
           },
+            ...(isLoggedIn && {
+          configuration: {
+            baseURL: `${window.location.origin}/api/ixcoach/anthropic`,
+          },
+          }),
           streaming: true,
           temperature,
           topP,

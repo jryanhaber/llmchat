@@ -17,6 +17,7 @@ import { AgentExecutor, createToolCallingAgent } from "langchain/agents";
 import moment from "moment";
 import { useAssistantUtils, useTools } from ".";
 import plausible from "../utils/plausible";
+import { AuthenticationError } from "openai";
 
 const getErrorMessage = (error: string) => {
   if (error.includes("image_url") && error.includes("400")) {
@@ -29,7 +30,7 @@ const getErrorMessage = (error: string) => {
 };
 
 export const useLLMRunner = () => {
-  const { user, open: openSignIn } = useAuth();
+  const { user, logout, open: openSignIn } = useAuth();
   const { store, refetch } = useChatContext();
   const editor = store((state) => state.editor);
   const setIsGenerating = store((state) => state.setIsGenerating);
@@ -107,10 +108,11 @@ export const useLLMRunner = () => {
     }
 
     const apiKey = apiKeys[selectedModelKey?.provider];
-
+    console.log("user", user);
     if (
       !apiKey &&
-      !["ollama", "llmchat"].includes(selectedModelKey?.provider)
+      (!["ollama", "llmchat"].includes(selectedModelKey?.provider)
+        && !user)
     ) {
       updateCurrentMessage({
         isLoading: false,
@@ -135,6 +137,7 @@ export const useLLMRunner = () => {
       preferences,
       provider: selectedModelKey.provider,
       apiKey,
+      isLoggedIn: !!user,
     });
 
     let agentExecutor: AgentExecutor | undefined;
@@ -192,7 +195,7 @@ export const useLLMRunner = () => {
           recursionLimit: 5,
           callbacks: [
             {
-              handleLLMStart: async () => {},
+              handleLLMStart: async () => { },
               handleToolStart(
                 tool,
                 input,
@@ -265,7 +268,15 @@ export const useLLMRunner = () => {
         isLoading: false,
         stop: true,
       });
-      console.error(err);
+
+
+      //logging out because token is invalid or expired and they need to login again or they can sue their own api key for models
+      if (err instanceof AuthenticationError || (err as any).statusCode === 401) {
+        console.log('Triggering logout due to authentication error');
+        logout();
+      } else {
+        console.log('Not an authentication error, no logout triggered');
+      }
     }
   };
 

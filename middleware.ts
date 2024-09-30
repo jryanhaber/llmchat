@@ -21,25 +21,64 @@ if (process.env.NEXT_PUBLIC_ENABLE_AUTH === "true") {
 }
 
 export const config = {
-  matcher: "/api/llmchat/chat/completions",
+  matcher: ["/api/llmchat/chat/completions", "/api/ixcoach/chat/completions"],
 };
 
 export default async function middleware(request: NextRequest) {
-  if (process.env.NEXT_PUBLIC_ENABLE_AUTH !== "true") {
-    return NextResponse.json(
-      { message: "Service is not available" },
-      { status: 401 },
-    );
-  }
-  const { supabaseResponse, user } = await updateSession(request);
+   console.log('middleware',middleware);
 
-  if (!user) {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+   const token = request.cookies.get('token')?.value;
+   console.log('token',token);
+
+  // If no token exists, proceed with the request
+  if (!token) {
+    return NextResponse.next();
   }
 
-  const { success } = await ratelimit.limit(user.id);
+  // If a token exists, validate it
+  const isValid = await validateToken(token);
+  console.log("isValid",isValid);
 
-  return success
-    ? supabaseResponse
-    : NextResponse.json({ message: "Rate limit exceeded" }, { status: 429 });
+  if (!isValid) {
+    // If the token is invalid, delete the 'token' cookie and return an unauthorized response
+      const response =  NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+    
+    
+    return response;
+  }else {
+     return NextResponse.next();
+  }
+
+
+  }
+
+  async function validateToken(token: string) {
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_IX_API_URL}auth/validateToken`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
+            },
+        });
+
+        console.log('Response status:', response.status);
+        console.log('Response status text:', response.statusText);
+        console.log('Response headers:', Array.from(response.headers.entries()));
+
+        if (!response.ok) {
+            console.log('Response not okay:', response.statusText);
+            return { isValid: false };
+        }
+
+        // Since the response is plain text, not JSON
+        const data = await response.text(); // Use response.text() instead of response.json()
+        console.log('Response data:', data);
+
+        // Assuming the API returns "OK" for valid and something else for invalid
+        return data === "OK";
+    } catch (error) {
+        console.error("Token validation error:", error);
+        return false;
+    }
 }
